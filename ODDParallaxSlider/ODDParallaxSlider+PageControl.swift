@@ -12,7 +12,7 @@ extension ODDParallaxSlider {
         guard newPage < items.count && newPage >= 0 else { return }
         guard let index = newPage as? Items.Index else { return }
         guard let newScrollViewPosition = items[index].id as? UUID else { return }
-         withAnimation(.snappy) {
+         withAnimation(.smooth(duration: 0.5, extraBounce: 0.5)) {
              scrollViewPosition = newScrollViewPosition
          }
     }
