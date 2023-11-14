@@ -14,7 +14,8 @@ struct ODDParallaxSliderConfiguration {
     var sliderEdgesHorizontalPadding: CGFloat
     var scrollIndicatorVisibility: ScrollIndicatorVisibility
     var parallaxAndSliderVerticalSpacing: CGFloat
-    var sliderParallaxEffectWithClipShape: RoundedRectangle?
+    var sliderHasParallaxEffect: Bool
+    var sliderClipShape: RoundedRectangle
 }
 
 extension ODDParallaxSliderConfiguration {
@@ -25,7 +26,8 @@ extension ODDParallaxSliderConfiguration {
               sliderEdgesHorizontalPadding: 10,
               scrollIndicatorVisibility: .hidden,
               parallaxAndSliderVerticalSpacing: 30,
-              sliderParallaxEffectWithClipShape: RoundedRectangle(cornerRadius: 20))
+              sliderHasParallaxEffect: false,
+              sliderClipShape: RoundedRectangle(cornerRadius: 20))
     }
 
     var sliderHorizontalEdgesVisibleSize: CGFloat {

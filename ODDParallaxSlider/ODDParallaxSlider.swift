@@ -26,19 +26,19 @@ struct ODDParallaxSlider<SliderContent: View,
             ScrollView(.horizontal) {
                 HStack(spacing: configuration.sliderInteritemSpacing) {
                     ForEach(items, id: \.id) { item in
-                        
                         VStack(spacing: configuration.parallaxAndSliderVerticalSpacing) {
                             parallaxContent(item)
                                 .visualEffect(paralexEffect)
-                            if let shape = configuration.sliderParallaxEffectWithClipShape {
+                            if configuration.sliderHasParallaxEffect {
                                 sliderContent(item)
                                     .containerRelativeFrame(.horizontal)
                                     .visualEffect(paralexEffect)
-                                    .clipShape(shape)
+                                    .clipShape(configuration.sliderClipShape)
                                     .shadow(color: .black.opacity(0.2), radius: 5)
                             } else {
                                 sliderContent(item)
                                     .containerRelativeFrame(.horizontal)
+                                    .clipShape(configuration.sliderClipShape)
                             }
                         }.containerRelativeFrame(.horizontal)
                     }
