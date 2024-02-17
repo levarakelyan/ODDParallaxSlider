@@ -10,12 +10,13 @@ import SwiftUI
 struct ODDParallaxSliderConfiguration {
     var parallaxSpeed: CGFloat
     var pageControlTopSpacing: CGFloat?
-    var sliderInteritemSpacing: CGFloat
-    var sliderEdgesHorizontalPadding: CGFloat
-    var scrollIndicatorVisibility: ScrollIndicatorVisibility
-    var parallaxAndSliderVerticalSpacing: CGFloat
-    var sliderHasParallaxEffect: Bool
-    var sliderClipShape: RoundedRectangle
+    let sliderInteritemSpacing: CGFloat
+    let sliderEdgesHorizontalPadding: CGFloat
+    let scrollIndicatorVisibility: ScrollIndicatorVisibility
+    let parallaxAndSliderVerticalSpacing: CGFloat
+    let sliderHasParallaxEffect: Bool
+    let sliderClipShape: RoundedRectangle
+    var allowScalling: Bool = true
 }
 
 extension ODDParallaxSliderConfiguration {
@@ -26,7 +27,7 @@ extension ODDParallaxSliderConfiguration {
               sliderEdgesHorizontalPadding: 10,
               scrollIndicatorVisibility: .hidden,
               parallaxAndSliderVerticalSpacing: 30,
-              sliderHasParallaxEffect: false,
+              sliderHasParallaxEffect: true,
               sliderClipShape: RoundedRectangle(cornerRadius: 20))
     }
 

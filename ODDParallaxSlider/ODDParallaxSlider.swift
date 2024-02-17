@@ -41,6 +41,9 @@ struct ODDParallaxSlider<SliderContent: View,
                                     .clipShape(configuration.sliderClipShape)
                             }
                         }.containerRelativeFrame(.horizontal)
+                         .scrollTransition { effect, phase in
+                                return effect.scaleEffect(y: configuration.allowScalling ? phase.isIdentity ? 1: 0.86 : 1)
+                        }
                     }
                 }.scrollTargetLayout()
             }.scrollIndicators(configuration.scrollIndicatorVisibility)
